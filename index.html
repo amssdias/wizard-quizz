@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/5cf6dd6ac1.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/css/main.css">
+
+    <!-- Vue JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Wizard school</title>
+</head>
+<body>
+    
+    <nav class="navigation-bar">
+        <h2 class="heading-secondary">Wizard School</h2>
+    </nav>
+
+    <main class="main">
+
+        <div class="chat" id="chat-app">
+
+            <div v-for="(message, index) in chatHistory" class="chat-history">
+                <chat-message 
+                    :message="message"
+                    v-if="message.type === 'question'"
+                ></chat-message>
+                <answers-list
+                    v-if="message.type === 'question'"
+                    :answers="message.answers"
+                    :is-active="chatHistory.length - 1 === index"
+                    @add-to-answers="handleAnswerSelected"
+                ></answers-list>
+
+                <chat-message-answer 
+                    :message="message"
+                    v-if="message.type === 'answer'"
+                ></chat-message>
+
+            </div>
+
+            <modal-house
+                v-if="finishQuizz"
+                :winner="winnerHouse"
+                @restart-quizz="handleRestart"
+            ></modal-house>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+    <script src="./components/ChatMessage.js"></script>
+    <script src="./components/ChatMessageAnswer.js"></script>
+    <script src="./components/AnswerList.js"></script>
+    <script src="./components/DisplayModalHouse.js"></script>
+
+    <script>
+        const mountedApp = app.mount("#chat-app");
+    </script>
+
+</html>

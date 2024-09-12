@@ -1,0 +1,54 @@
+// BASIC
+$color-white: #fff;
+$color-black: #000;
+
+// Primary Colors
+$primary-purple: #6c35de;
+$secondary-purple: #a364ff;
+$light-purple: #cb80ff;
+$light-pink: #ffc7ff;
+
+// Neutral Colors
+$dark-gray: #373737;
+$darker-purple: #241b35;
+$dark-purple: #342a45;
+$medium-purple: #4d425f;
+
+// Utility Colors
+$light-gray: #e0e0e0;
+
+// Font
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('../../utils/font/SpaceGrotesk-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('../../utils/font/SpaceGrotesk-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('../../utils/font/SpaceGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('../../utils/font/SpaceGrotesk-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('../../utils/font/SpaceGrotesk-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}

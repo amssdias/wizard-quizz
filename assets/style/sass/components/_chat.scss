@@ -1,0 +1,87 @@
+.chat {
+    width: 40%;
+    padding: 2rem 0rem;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    height: 90vh;
+    scrollbar-width: none;
+
+    @include respond(tab-land) { // width < 1200?
+        width: 60%;
+    }
+
+    @include respond(phone) { // width < 600?
+        width: 90%;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+
+    &-history {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__message {
+        margin-bottom: 0.5rem;
+
+        border: 2px solid $darker-purple;
+        color: $color-white;
+
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        width: 60%;
+        font-size: 1.6rem;
+
+        background: linear-gradient(
+            to right,
+            $primary-purple, 
+            $secondary-purple,
+        );
+
+        animation-name: moveInBottom;
+        animation-duration: 0.7s;
+
+        &-text {
+            font-weight: 400;
+        }
+
+        &-answers {
+            padding: 1rem;
+        }
+
+        &-answer {
+            opacity: 0;
+            list-style-type: none;
+            
+            border: 1px solid $light-purple;
+            border-radius: 1rem;
+            box-shadow: 1px 1px 1rem 0rem $darker-purple;
+
+            padding: 1rem 2rem;
+            margin-bottom: 1rem;
+            
+            cursor: pointer;
+
+            animation-name: moveInLeft, appearFromInvisible;
+            animation-duration: 0.8s, 0.5s;
+            animation-delay: 1s, 1s;
+            animation-fill-mode: none, forwards;
+
+            &:hover {
+                background-color: $light-pink;
+                transition: .5s;
+            }
+
+        }
+
+        &--current-user {
+            margin: 2rem 0rem;
+            align-self: flex-end;
+        }
+
+    }
+}

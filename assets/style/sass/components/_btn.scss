@@ -1,0 +1,28 @@
+.btn {
+
+    &--primary {
+        padding: 1rem 3rem;
+
+        border-radius: 1rem;
+        border: none;
+        outline: 2px solid $light-pink;
+
+        cursor: pointer;
+
+        background: linear-gradient(
+            to bottom,
+            $light-purple, 
+            $light-pink,
+        );
+
+        font-size: 1.2rem;
+        color: $darker-purple;
+        font-weight: 500;
+
+        transition: 0.2s;
+
+        &:hover {
+            transform: translateY(-0.2rem);
+        }
+    }
+}
