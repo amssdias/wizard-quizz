@@ -9,6 +9,18 @@
 
         align-items: center !important;
 
+        @include respond(tab-port) { // width < 900?
+            width: 70%;
+        }
+    
+        @include respond(phone) { // width < 600?
+            width: 90%;
+        }
+
+        & h2 {
+            text-align: center;
+        }
+
         &__input-text{
             padding: 0.7rem 1rem;
             width: 70%;
