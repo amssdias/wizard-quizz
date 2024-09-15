@@ -1,0 +1,23 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+
+    &-username {
+        @include modal-center;
+        @include modal-center-bg;
+
+        align-items: center !important;
+
+        &__input-text{
+            padding: 0.7rem 1rem;
+            width: 70%;
+
+            outline: none;
+            border: none;
+
+            border-radius: 2rem;
+        }
+    }
+
+}

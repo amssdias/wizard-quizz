@@ -2,6 +2,8 @@ const app = Vue.createApp({
     data() {
 
         return {
+            username: null,
+
             // Questions
             questions: [],
             currentQuestionIndex: 0,
@@ -47,17 +49,17 @@ const app = Vue.createApp({
         addQuestionToChat() {
             const question = this.questions[this.currentQuestionIndex];
             this.chatHistory.push({
-              type: "question",
-              text: question.title,
-              answers: question.answers,
+                type: "question",
+                text: question.title,
+                answers: question.answers,
             });
         },
-        
+
         handleAnswerSelected(answer) {
             // Add the user's answer to the chat
             this.chatHistory.push({
-              type: "answer",
-              text: answer,
+                type: "answer",
+                text: answer,
             });
 
             // Update points
@@ -71,14 +73,14 @@ const app = Vue.createApp({
                     this.finishQuizz = true;
                 }
             }, 1000);
-      
+
         },
 
         updateScore(answer) {
             const points = this.getScores(answer);
             this.updatePoints(points);
         },
-        
+
         getScores(answer) {
             const answers = this.questions[this.currentQuestionIndex].answers;
             return answers.find(a => a.title === answer).scores;
@@ -93,7 +95,7 @@ const app = Vue.createApp({
 
         scrollToBottom() {
             const container = this.$el.parentElement;
-            container.scrollTop =  container.scrollHeight;
+            container.scrollTop = container.scrollHeight;
         },
 
         handleRestart() {
@@ -105,6 +107,9 @@ const app = Vue.createApp({
                 this.addQuestionToChat();
 
             }, 500)
+        },
+        registerUser(username) {
+            this.username = username;
         }
     }
 })

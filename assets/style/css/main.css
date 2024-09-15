@@ -146,6 +146,10 @@ body {
   cursor: no-drop !important;
 }
 
+.margin-bottom-s {
+  margin-bottom: 3rem;
+}
+
 .margin-bottom-xs {
   margin-bottom: 2rem;
 }
@@ -231,6 +235,29 @@ body {
 .chat__message--current-user {
   margin: 2rem 0rem;
   align-self: flex-end;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+.form-username {
+  position: relative;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4d425f;
+  background: linear-gradient(to bottom, #6c35de, #4d425f);
+  align-items: center !important;
+}
+.form-username__input-text {
+  padding: 0.7rem 1rem;
+  width: 70%;
+  outline: none;
+  border: none;
+  border-radius: 2rem;
 }
 
 .modal-wrapper {

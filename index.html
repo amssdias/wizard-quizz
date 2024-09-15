@@ -25,7 +25,12 @@
 
         <div class="chat" id="chat-app">
 
-            <div v-for="(message, index) in chatHistory" class="chat-history">
+            <modal-username
+                v-if="!username"
+                @send-username="registerUser" 
+            ></modal-username>
+
+            <div v-for="(message, index) in chatHistory" class="chat-history" v-if="username">
                 <chat-message 
                     :message="message"
                     v-if="message.type === 'question'"
@@ -63,6 +68,7 @@
     <script src="./components/ChatMessageAnswer.js"></script>
     <script src="./components/AnswerList.js"></script>
     <script src="./components/DisplayModalHouse.js"></script>
+    <script src="./components/DisplayModalUser.js"></script>
 
     <script>
         const mountedApp = app.mount("#chat-app");
