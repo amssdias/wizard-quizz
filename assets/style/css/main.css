@@ -139,7 +139,6 @@ body {
 .heading-secondary {
   color: #e0e0e0;
   font-size: 3rem;
-  text-transform: uppercase;
 }
 
 .cursor-disabled {
@@ -152,6 +151,10 @@ body {
 
 .margin-bottom-xs {
   margin-bottom: 2rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .btn--primary {

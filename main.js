@@ -71,6 +71,7 @@ const app = Vue.createApp({
                     this.addQuestionToChat();
                 } else {
                     this.finishQuizz = true;
+                    this.updateWinnerHouseName();
                 }
             }, 1000);
 
@@ -110,6 +111,17 @@ const app = Vue.createApp({
         },
         registerUser(username) {
             this.username = username;
+        },
+        updateWinnerHouseName() {
+            let highestPoints = 0;
+            for (const [house, points] of Object.entries(this.housePoints)) {
+                if (points > highestPoints) {
+                    highestPoints = points;
+
+                    this.winnerHouse = house.replace('Points', '');
+                }
+            }
         }
+
     }
 })
